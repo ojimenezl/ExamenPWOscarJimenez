@@ -18,33 +18,38 @@ const lecturacsv = async(file) => {
         tareaPorHAcer.push(row);
     }
 
-    return 'Se ha terminado de leer el archivo';
+    return 'Se ha terminado de leer el archivo'.green;
 };
 
 let getE = async(file, country, year) => {
     let vectotal = []
 
     let doc = await lecturacsv(file);
-    //let colum = await columna07(file, year)
+
     console.log(doc);
-    //console.log(await columna07(file, year, country));
-    //console.log(menores(file, country, year));
-    //console.log(tareaPorHAcer);
-    // let val = await validar(country, year);
+    let val = await validar(country, year);
+
     vectotal.push(await menores(file, country, year))
-        // let est = {
-        //     MiVector: await columna07(file, year)
-        //         // Menor_Mayor: await media(country, year),
-        //         // Menores: await menores(country, year),
-        //         // Mayores: await mayores(country, year),
-        //         // top5: await topcinco(year)
-        // };
+
 
     return vectotal;
 
 }
 
+const validar = async(country, year) => {
+    if (!Number(year)) {
+        throw new Error(`año ${year} invalido`.red)
+    }
+    let i = 0;
+    if (year < 1960 || year > 2019)
+        throw new Error('Año no Encontrado'.red)
+    for (i = 4; i < tareaPorHAcer.length; i++) {
+        if (country === tareaPorHAcer[i][1]) { break; }
+    }
+    if (i == tareaPorHAcer.length)
+        throw new Error('Codigo de Pais no encontrado'.red)
 
+}
 
 //Oscar Jiménez
 const menores = async(file, country, year) => {
@@ -72,9 +77,9 @@ const menores = async(file, country, year) => {
     }
 
     console.log(`\nDatos:	Personas que usan Internet (% de la población)`.green);
-    console.log(`País:${country}`.green);
-    console.log(`Año:${year}`.green);
-    console.log(`valor:${sub}`.red);
+    console.log(`País:${country}`.yellow);
+    console.log(`Año:${year}`.yellow);
+    console.log(`valor:${sub}`.yellow);
     console.log("");
     let datos = `\nDatos:	Personas que usan Internet (% de la población)`
     let ps = `País:${country}`

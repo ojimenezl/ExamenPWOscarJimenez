@@ -9,7 +9,7 @@ const country = {
 };
 const year = {
     alias: "y",
-    default: "2018",
+    default: "1960",
     desc: "Año",
 };
 // const out = {
@@ -18,7 +18,7 @@ const year = {
 //     desc: "Path json",
 // };
 const argv = require("yargs")
-    .command("publicar", "Crear una tarea", {
+    .command("mostrar", "Crear una tarea", {
         file,
         country,
         year,

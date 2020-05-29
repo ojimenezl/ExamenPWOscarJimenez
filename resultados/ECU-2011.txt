@@ -1,0 +1,2 @@
+
+Datos:	Personas que usan Internet (% de la población),País:ECU,Año:2011,valor:31.36680836

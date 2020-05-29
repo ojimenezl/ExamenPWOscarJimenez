@@ -3,11 +3,12 @@ const control = require('./buscador/control')
 let comando = argv._[0];
 //Oscar
 switch (comando) {
-    case 'publicar':
+    case 'mostrar':
         control.publicar(argv.file, argv.country, argv.year)
+
         break;
     case 'guardar':
-        // control.guardar(argv.file,  argv.year, argv.out);
+
         control.guardar(argv.file, argv.country, argv.year);
         break;
     default:
