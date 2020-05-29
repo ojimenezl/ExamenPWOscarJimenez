@@ -17,6 +17,7 @@
     },
     "homepage": "https://github.com/ojimenezl/ExamenPWOscarJimenez#readme",
     "dependencies": {
+        "cat": "^0.2.0",
         "colors": "^1.4.0",
         "csv-parser": "^2.3.2",
         "fs": "0.0.1-security",

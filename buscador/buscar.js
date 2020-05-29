@@ -21,22 +21,22 @@ const lecturacsv = async(file) => {
     return 'Se ha terminado de leer el archivo'.green;
 };
 
-let getE = async(file, country, year) => {
+let getE = async(file, year, country) => {
     let vectotal = []
 
     let doc = await lecturacsv(file);
 
     console.log(doc);
-    let val = await validar(country, year);
+    let val = await validar(year, country);
 
-    vectotal.push(await menores(file, country, year))
+    vectotal.push(await menores(file, year, country))
 
 
     return vectotal;
 
 }
 
-const validar = async(country, year) => {
+const validar = async(year, country) => {
     if (!Number(year)) {
         throw new Error(`año ${year} invalido`.red)
     }
@@ -52,7 +52,7 @@ const validar = async(country, year) => {
 }
 
 //Oscar Jiménez
-const menores = async(file, country, year) => {
+const menores = async(file, year, country) => {
     // cargarDB()
     var sub = 0;
     var top = [];

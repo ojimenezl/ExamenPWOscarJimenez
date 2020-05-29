@@ -5,15 +5,15 @@ const est = require("./buscar");
 let tareaPorHAcer = [];
 var dir = './resultados';
 
-const publicar = (file, country, year) => {
-    est.getE(file, country, year).then(v => (v)).catch(msg => console.log(msg.message));
+const publicar = (file, year, country) => {
+    est.getE(file, year, country).then(v => (v)).catch(msg => console.log(msg.message));
 };
-const guardar = (file, country, year) => {
-    est.getE(file, country, year).then(v => escribirjson(country, year, v)).catch(msg => console.log(msg.message));
+const guardar = (file, year, country) => {
+    est.getE(file, year, country).then(v => escribirjson(year, country, v)).catch(msg => console.log(msg.message));
 
 };
 //Guardando en json
-const escribirjson = (country, year, vect) => {
+const escribirjson = (year, country, vect) => {
     let data = (vect);
     if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir)

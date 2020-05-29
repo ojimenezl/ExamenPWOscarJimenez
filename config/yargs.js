@@ -1,16 +1,17 @@
-const file = {
+const archivo = {
     demand: true,
     alias: "f",
-    //desc: "Path csv",
+    desc: "Archivo CSV con datos a procesar",
 };
-const country = {
+const pais = {
     alias: "c",
-    desc: "Codigo de pais",
+    default: "ECU",
+    desc: "Código del país que se requiere información",
 };
-const year = {
+const anio = {
     alias: "y",
     default: "1960",
-    desc: "Año",
+    desc: " Año que del que se busca información",
 };
 // const out = {
 //     demand: true,
@@ -18,15 +19,17 @@ const year = {
 //     desc: "Path json",
 // };
 const argv = require("yargs")
-    .command("mostrar", "Crear una tarea", {
-        file,
-        country,
-        year,
+    .command("mostrar", "Imprime en pantalla el resultado de la búsqueda", {
+        archivo,
+        anio,
+        pais,
+
     })
-    .command("guardar", "Actualizo una tarea", {
-        file,
-        country,
-        year,
+    .command("guardar", "Genera un archivo con el resultado de la búsqueda", {
+        archivo,
+        anio,
+        pais,
+
         // out,
     }).argv;
 module.exports = {
