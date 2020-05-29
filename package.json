@@ -1,0 +1,25 @@
+{
+    "name": "examenpwoscarjimenez",
+    "version": "1.0.0",
+    "description": "examen primer parcial pw",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ojimenezl/ExamenPWOscarJimenez.git"
+    },
+    "author": "Oscar Jiménez",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ojimenezl/ExamenPWOscarJimenez/issues"
+    },
+    "homepage": "https://github.com/ojimenezl/ExamenPWOscarJimenez#readme",
+    "dependencies": {
+        "colors": "^1.4.0",
+        "csv-parser": "^2.3.2",
+        "fs": "0.0.1-security",
+        "yargs": "^15.3.1"
+    }
+}
