@@ -11,13 +11,8 @@ const pais = {
 const anio = {
     alias: "y",
     default: "1960",
-    desc: " Año que del que se busca información",
+    desc: "Año que del que se busca información",
 };
-// const out = {
-//     demand: true,
-//     alias: "o",
-//     desc: "Path json",
-// };
 const argv = require("yargs")
     .command("mostrar", "Imprime en pantalla el resultado de la búsqueda", {
         archivo,
